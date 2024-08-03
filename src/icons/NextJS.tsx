@@ -1,8 +1,6 @@
 import type { SVGProps } from "react";
 
 const NextjsIcon = (props: SVGProps<SVGSVGElement>) => {
-  
-
   return (
     <svg
       width="1em"

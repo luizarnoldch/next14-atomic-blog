@@ -29,7 +29,7 @@ export default function RootLayout({
           <main className="w-full min-h-screen">
             <Header />
             {children}
-            {/* <Footer /> */}
+            <Footer />
           </main>
         </ThemeProvider>
       </body>

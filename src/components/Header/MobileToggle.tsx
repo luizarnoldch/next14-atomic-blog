@@ -51,7 +51,7 @@ const MobileToggle = ({ children }: MobileToggleProps) => {
               <li key={social.name}>
                 <Button asChild size="icon" variant="ghost">
                   <Link href={social.href} target="_blank">
-                    <social.icon className="size-6 fill-white"/>
+                    <social.icon className="size-6 fill-primary"/>
                   </Link>
                 </Button>
               </li>

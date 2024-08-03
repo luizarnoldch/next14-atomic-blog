@@ -19,12 +19,17 @@ const navigationItems = [
   { name: 'Blog', href: '/blog' },
 ];
 
+const serviceItems = [
+  { name: 'Asesorias', href: '/asesoria' },
+  { name: 'Proyectos', href: '/proyectos' },
+];
+
 const Footer = () => {
   return (
-    <footer className="w-full bg-primary-foreground py-8">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
+    <footer className="w-full h-full bg-primary-foreground py-8">
+      <div className="container flex flex-col md:flex-row justify-center md:justify-between items-start space-y-8 md:space-y-0">
         {/* Columna de Logo y Descripción */}
-        <div className="flex flex-col items-center md:items-start space-y-4">
+        <div className="flex flex-col items-center md:items-start space-y-4 md:w-1/3 mx-auto">
           <Image
             src="/logoicon.png"
             alt="logo_icon"
@@ -40,19 +45,16 @@ const Footer = () => {
             height={65}
             className="md:block hidden w-40"
           />
-          <p className="text-white text-center md:text-left max-w-xs">
+          <p className="text-primary text-center md:text-left max-w-xs">
             Descubre tu potencial en la tecnología con nuestras soluciones y servicios innovadores.
           </p>
-        </div>
-
-        {/* Columna de Navegación */}
-        <div className="flex flex-col items-center md:items-start space-y-2">
-          <h2 className="text-white font-semibold">Navegación</h2>
-          <ul className="space-y-2">
-            {navigationItems.map((item) => (
-              <li key={item.name}>
-                <Link href={item.href}>
-                  <span className="text-white hover:underline">{item.name}</span>
+          <ul className="flex space-x-4">
+            {socialLinks.map((social) => (
+              <li key={social.name}>
+                <Link href={social.href} target="_blank">
+                  <span className="text-primary hover:text-gray-400">
+                    <social.icon className="size-6 fill-primary" />
+                  </span>
                 </Link>
               </li>
             ))}
@@ -60,15 +62,27 @@ const Footer = () => {
         </div>
 
         {/* Columna de Redes Sociales */}
-        <div className="flex flex-col items-center md:items-start space-y-2">
-          <h2 className="text-white font-semibold">Síguenos</h2>
-          <ul className="flex space-x-4">
-            {socialLinks.map((social) => (
-              <li key={social.name}>
-                <Link href={social.href} target="_blank">
-                  <span className="text-white hover:text-gray-400">
-                    <social.icon className="w-6 h-6" />
-                  </span>
+        <div className="flex flex-col items-center md:items-start md:space-y-2 md:w-1/3 py-4 mx-auto gap-4">
+          <h2 className="text-primary font-semibold">Servicios</h2>
+          <ul className="flex flex-col md:flex-row justify-between items-center h-full gap-4">
+            {serviceItems.map((item) => (
+              <li key={item.name} className='w-full h-full flex justify-center items-center'>
+                <Link href={item.href} className='w-full h-full'>
+                  <span className="text-primary hover:underline">{item.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Columna de Navegación */}
+        <div className="flex flex-col items-center md:items-start md:space-y-2 md:w-1/3 py-4 gap-4 mx-auto">
+          <h2 className="text-primary font-semibold">Contenido</h2>
+          <ul className="flex flex-col md:flex-row justify-between items-center h-full gap-4">
+            {navigationItems.map((item) => (
+              <li key={item.name} className='w-full h-full flex justify-center items-center'>
+                <Link href={item.href} className='w-full h-full'>
+                  <span className="text-primary hover:underline">{item.name}</span>
                 </Link>
               </li>
             ))}

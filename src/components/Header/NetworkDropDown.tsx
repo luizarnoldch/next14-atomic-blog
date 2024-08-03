@@ -42,7 +42,7 @@ const NetworkDropDown = ({ className }: NetworkDropDownProps) => {
         {socialLinks.map((social) => (
           <DropdownMenuItem key={social.name} className="flex items-center">
             <Link href={social.href} target="_blank" className="flex items-center gap-2">
-              <social.icon className="size-6 fill-white" />
+              <social.icon className="size-6 fill-primary" />
               <span className="flex-grow">{social.name}</span>
             </Link>
           </DropdownMenuItem>
